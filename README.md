@@ -14,12 +14,11 @@
 ## 서버 : server.js
 
 ### 주요 의존성 : 
-- [Express](https://expressjs.com/): Node.js를 위한 웹 프레임워크
+- [Express](https://www.npmjs.com/package/express): Node.js를 위한 웹 프레임워크
 - [express-session](https://www.npmjs.com/package/express-session): 사용자 세션 관리 미들웨어
 - [body-parser](https://www.npmjs.com/package/body-parser): 들어오는 요청 본문을 구문 분석하는 미들웨어
-- [ethers]
-- [dotenv]
-- [abi, contractAddress]
+- [ethers](https://www.npmjs.com/package/ethers): 이더리움과 상호 작용하기 위한 라이브러리
+- [dotenv](https://www.npmjs.com/package/dotenv): 환경 변수를 .env 파일에서 로드하는 제로 종속성 모듈
 
 ### 주요 엔드포인트 :
 

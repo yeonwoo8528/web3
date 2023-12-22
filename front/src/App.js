@@ -2,7 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { useNavigate, BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
-import Usecontract from './Usecontract';
 import axios from 'axios';
 
 function Main() {

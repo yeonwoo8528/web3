@@ -1,6 +1,7 @@
 const express = require('express')
 const session = require('express-session')
 const ethers = require('ethers');
+const utils = require('ethers');
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
@@ -234,7 +235,7 @@ app.post('/rewardTokens', async (req, res) => {
         const contractWithSigner = contract.connect(walletFrom);
         const transaction = await contractWithSigner.transfer(
             wallet,
-            100
+            10000
         );
         const receipt = await transaction.wait();
         console.log('Transaction comlpleted');
@@ -251,7 +252,8 @@ app.post('/adminMint', async (req, res) => {
         const wallet = req.session.wallet;
         const walletFrom = new ethers.Wallet(process.env.METAMASK_PRIVATE_KEY, provider);
         const contractWithSigner = contract.connect(walletFrom);
-        const transaction = await contractWithSigner.mint(wallet, 10 * 10**18);
+        const mintAmount = utils.parseUnits('10', 18);
+        const transaction = await contractWithSigner.mint(wallet, mintAmount);
         const receipt = await transaction.wait();
         console.log('Minting tokens completed');
         console.log(receipt);
@@ -267,7 +269,8 @@ app.post('/adminBurn', async (req, res) => {
         const wallet = req.session.wallet;
         const walletFrom = new ethers.Wallet(process.env.METAMASK_PRIVATE_KEY, provider);
         const contractWithSigner = contract.connect(walletFrom);
-        const transaction = await contractWithSigner.burn(wallet, 10 * 10**18);
+        const burnAmount = utils.parseUnits('10', 18);
+        const transaction = await contractWithSigner.burn(wallet, burnAmount);
         const receipt = await transaction.wait();
         console.log('Burning tokens completed');
         console.log(receipt);

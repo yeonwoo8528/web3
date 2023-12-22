@@ -7,47 +7,43 @@
 
 - React
 - Express.js
+- Mysql
 - Ethers.js
 - Solidity
-- DB : Mysql
 
 ## 서버 : server.js
 
 ### 주요 의존성 : 
 - [Express](https://expressjs.com/): Node.js를 위한 웹 프레임워크
 - [express-session](https://www.npmjs.com/package/express-session): 사용자 세션 관리 미들웨어
-- [express-mysql-session](https://www.npmjs.com/package/express-mysql-session): MySQL을 위한 Express 세션 저장소
-- [cors](https://www.npmjs.com/package/cors): Cross-Origin Resource Sharing을 활성화하기 위한 미들웨어
 - [body-parser](https://www.npmjs.com/package/body-parser): 들어오는 요청 본문을 구문 분석하는 미들웨어
+- [ethers]
+- [dotenv]
+- [abi, contractAddress]
 
 ### 주요 엔드포인트 :
 
-- `/login`: 사용자 로그인 처리
-- `/signin`: 사용자 회원가입 처리
-- `/userdata`: 로그인한 사용자의 데이터 및 작성한 게시글 조회
-- `/boards`: 모든 게시글 및 작성자 조회
-- `/posts`: 게시글 작성 및 삭제 모든 게시글 조회
-- `/comments/:postId`: 특정 게시글에 대한 댓글 조회 및 작성
+- `/rewardTokens`: 게시글 작성 시 토큰 보상
+- `/admin`: 관리자 계정 접근 시 토큰 발행과 소거
 
 ## 클라이언트 : App.js
 
 ### 주요 컴포넌트:
 
-- `Main`: 홈페이지 및 로그인, 회원가입 링크 제공
-- `Login`: 사용자 로그인 폼 
-- `Signin`: 사용자 회원가입 폼
-- `Welcome`: 로그인 후 메인 페이지, 게시글 조회 및 로그아웃 기능 제공
-- `Board`: 모든 게시글 조회 페이지
-- `Post`: 게시글 작성 폼
-- `Comment`: 특정 게시글에 대한 댓글 조회 및 작성 기능 제공
+- `Mypage`: 마이 페이지, 토큰 발행과 소거
+- `Post`: 게시글 작성 폼, 토큰 자동 보상
 
 ## DB : Mysql
 
 ### Table 구성
 
-- firstmysql : id, password, name
-- posts : idx, id, content
+- users : name, wallet
+- posts : idx, wallet, content
 - comments : idx, postId, writer, comment
+
+## 컴파일 방법
+
+- `truffle compile`
 
 ## 빌드 방법
 

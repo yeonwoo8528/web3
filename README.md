@@ -55,4 +55,4 @@
 
 ## 동작 영상
 
-[웹사이트 동작 영상 바로가기](https://youtu.be/TK_M_lgHN4Q)
+[웹사이트 동작 영상 바로가기](https://youtu.be/otcpAEJ2wfc)
